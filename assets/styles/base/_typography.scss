@@ -20,6 +20,12 @@ H2 {
 
 H3 {
   font-size: 18px;
+
+  //for icon tooltip
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 
 H4 {

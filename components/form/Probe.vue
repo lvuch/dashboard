@@ -144,12 +144,10 @@ export default {
 
 <template>
   <div @input="update">
-    <div class="title clearfix">
-      <h3>
-        {{ label }}
-        <i v-if="description" v-tooltip="description" class="icon icon-info" />
-      </h3>
-    </div>
+    <h3>
+      <span>{{ label }}</span>
+      <i v-if="description" v-tooltip="description" class="icon icon-info" />
+    </h3>
     <div class="row">
       <div class="col span-11-of-23">
         <LabeledSelect
