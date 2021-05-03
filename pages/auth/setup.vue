@@ -206,13 +206,13 @@ export default {
 <template>
   <div class="setup">
     <div class="row">
-      <div class="col span-6 pr-40 pl-40">
+      <div class="col span-6">
         <h1 class="text-center">
           {{ t('setup.welcome', {product}) }}
         </h1>
 
         <template v-if="step===1">
-          <p class="text-center mb-20 mt-20">
+          <p class="text-center mb-40 mt-20">
             <t k="setup.setPassword" :raw="true" />
           </p>
 
@@ -303,6 +303,10 @@ export default {
       align-items: center;
       & .checkbox {
         margin: auto
+      }
+
+      .span-6 {
+        padding: 0 60px;
       }
     }
 
