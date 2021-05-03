@@ -218,38 +218,35 @@ export default {
 
           <!-- For password managers... -->
           <input type="hidden" name="username" autocomplete="username" :value="username" />
-
-          <div class="row">
-            <div class="col span-8">
-              <div class="mb-20">
-                <LabeledInput
-                  ref="password"
-                  v-model.trim="password"
-                  :type="useRandom ? 'text' : 'password'"
-                  :disabled="useRandom"
-                  label-key="setup.newPassword"
-                >
-                  <template v-if="useRandom" #suffix>
-                    <div class="addon" style="padding: 0 0 0 12px;">
-                      <CopyToClipboard :text="password" class="btn-sm" />
-                    </div>
-                  </template>
-                </LabeledInput>
-              </div>
-              <LabeledInput
-                v-show="!useRandom"
-                v-model.trim="confirm"
-                autocomplete="new-password"
-                type="password"
-                label-key="setup.confirmPassword"
-              />
-            </div>
-            <div class="col">
-              <RadioGroup v-model="useRandom" name="password-mode" :options="[{label: t('setup.useRandom'), value: true}, {label: t('setup.useManual'), value: false}]" />
-            </div>
+          <div class="mb-20">
+            <RadioGroup v-model="useRandom" name="password-mode" :options="[{label: t('setup.useRandom'), value: true}, {label: t('setup.useManual'), value: false}]" />
           </div>
+          <div class="mb-20">
+            <LabeledInput
+              ref="password"
+              v-model.trim="password"
+              :type="useRandom ? 'text' : 'password'"
+              :disabled="useRandom"
+              label-key="setup.newPassword"
+            >
+              <template v-if="useRandom" #suffix>
+                <div class="addon" style="padding: 0 0 0 12px;">
+                  <CopyToClipboard :text="password" class="btn-sm" />
+                </div>
+              </template>
+            </LabeledInput>
+          </div>
+          <LabeledInput
+            v-show="!useRandom"
+            v-model.trim="confirm"
+            autocomplete="new-password"
+            type="password"
+            label-key="setup.confirmPassword"
+          />
 
-          <div class="checkbox mt-20">
+          <hr class="mt-40 mb-40 " />
+
+          <div class="checkbox">
             <Checkbox v-model="telemetry" :label="t('setup.telemetry.label')" type="checkbox" />
             <i v-tooltip="{content:t('setup.telemetry.tip', {}, true), delay: {hide:500}, autoHide: false}" class="icon icon-info" />
           </div>
