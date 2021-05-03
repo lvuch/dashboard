@@ -1,4 +1,4 @@
-import { NORMAN, MANAGEMENT } from '@/config/types';
+import { NORMAN } from '@/config/types';
 import { findBy } from '@/utils/array';
 import { SETUP, TIMED_OUT } from '@/config/query-params';
 import { get } from '@/utils/object';
